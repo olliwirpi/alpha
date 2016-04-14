@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Karavaanipalvelu</title>
+
+    <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" id="top-bar">
+      <div class="container">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">Vuokraa</a></li>
+            <li><a class="navbar-brand" href="#">Karavaanipalvelu</a></li>
+            <li><a href="#">Yritys</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="jumbotron" id="main">
+    <p>Aloita retkesi täältä</p>
+    <%= link_to 'Products', controller: 'products' %>
+    <div class="container" id="loginForm">
+      <form class="form-signin" id="login_form" method="post" action="/login/">
+        <h2 class="form-signin-heading">Kirjaudu sisään</h2>
+        <a class="registerLink" href="/register">Rekisteröidy käyttäjäksi</a>
+        <label for="inputEmail" class="sr-only">Sähköpostiosoite</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Sähköpostiosoite" required autofocus>
+        <label for="inputPassword" class="sr-only">Salasana</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Salasana" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Muista minut
+          </label>
+        </div>
+        <button id="submitLogin" class="btn btn-lg btn-primary btn-block" type="submit" value="submit">Kirjaudu sisään</button>
+      </form>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+      <p class="text-muted">Place sticky footer content here.</p>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript"></script>
+</body>
+</html>
