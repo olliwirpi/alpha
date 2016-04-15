@@ -7,12 +7,15 @@
     <th colspan="2"></th>
   </tr>
 
-  <% @products.each do |p| %>
+  <% @products.each do |prod| %>
     <tr>
-      <td><%= p.title %></td>
-      <td><%= p.description %></td>
-      <td><%= link_to 'Show', product_path(p) %></td>
-      <td><%= link_to 'Edit', edit_product_path(p) %></td>
+      <td><%= prod.title %></td>
+      <td><%= prod.description %></td>
+      <td><%= link_to 'Show', product_path(prod) %></td>
+      <td><%= link_to 'Edit', edit_product_path(prod) %></td>
+      <td><%= link_to 'Destroy', product_path(product),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
