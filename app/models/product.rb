@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
-  validates :title, presence: true,
+  belongs_to :user
+  default_scope -> { order(created_at: :desc) }
+  validates :user_id, :title, presence: true,
                     length: { minimum: 5 }
 end
